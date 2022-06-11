@@ -2,7 +2,6 @@
     "tasks": [{
         "label": "build-elf",
         "type": "shell",
-        "command": "cd ${workspaceRoot}/test/mlx90614_stm32f103_i2c && make",
-        "problemMatcher": []
+        "command": "cd ${workspaceRoot}/test/mlx90614_stm32f103_i2c && make -j4"
     }]
 }

@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Cortex Debug",
+            "name": "Cortex Debug STLink",
             "cwd": "${workspaceRoot}/test/mlx90614_stm32f103_i2c",
             "executable": "./build/mlx90614_stm32f103_i2c.elf",
             "request": "launch",
@@ -16,6 +16,19 @@
             "gdbPath": "/usr/bin/arm-none-eabi-gdb",
             "svdFile": "STM32F103xx.svd",
             "preLaunchTask": "build-elf"
-        }
+        },
+        {
+            "name": "Cortex Debug JLink SWD",
+            "cwd": "${workspaceRoot}/test/mlx90614_stm32f103_i2c",
+            "executable": "./build/mlx90614_stm32f103_i2c.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "showDevDebugOutput": false,
+            "servertype": "openocd",
+            "configFiles": ["../../openocd/jlink-swd.cfg", "/usr/share/openocd/scripts/target/stm32f1x.cfg"],
+            "gdbPath": "/usr/bin/arm-none-eabi-gdb",
+            "svdFile": "STM32F103xx.svd",
+            "preLaunchTask": "build-elf"
+        },
     ]
 }
